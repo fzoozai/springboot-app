@@ -26,11 +26,13 @@ public class TopicController {
 		return topicService.getTopic(id);
 	}
 	
+	// make sure to append the RequestBody annotation to pass the payload to the corresponding entry
 	@RequestMapping(method=RequestMethod.POST, value="/topics")
 	public void addTopic(@RequestBody Topic topic) {
 		topicService.addTopic(topic);
 	}
 	
+	// make sure to append the RequestBody annotation to pass the payload to the corresponding entry
 	@RequestMapping(method=RequestMethod.PUT, value="/topics/{id}")
 	public void updateTopic(@RequestBody Topic topic, @PathVariable String id) {
 		topicService.updateTopic(id, topic);
